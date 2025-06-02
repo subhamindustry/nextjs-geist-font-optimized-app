@@ -14,4 +14,15 @@ model AttendanceRecord {
   timestamp DateTime @default(now())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  latitude  Float?   // Optional latitude field
+  longitude Float?   // Optional longitude field
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  username     String   @unique
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
